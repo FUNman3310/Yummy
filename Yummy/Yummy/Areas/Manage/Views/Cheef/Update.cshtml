@@ -1,0 +1,71 @@
+﻿
+
+@model Cheef
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Craete a Product</h1>
+
+<div class="container">
+<form method="post" asp-action="Create" enctype="multipart/form-data">
+  <div class="row">
+      <div class="mb-3 col-md-3">
+        <label asp-for="FullName" class="form-label">FullName</label>
+        <input  class="form-control" asp-for="FullName" placeholder="FullName">
+        <span asp-validation-for="FullName" class="text-danger"></span>
+      </div>
+      <div class="mb-3 col-md-3">
+        <label asp-for="Job" class="form-label">Job</label>
+        <input class="form-control" asp-for="Job" placeholder="Job">
+         <span asp-validation-for="Job" class="text-danger"></span>
+      </div>
+
+  </div class="row align-items-center">
+  <div class="row">
+      <div class="mb-3 col-md-2">
+        <label asp-for="instagram" class="form-label">instagram</label>
+        <input  class="form-control" asp-for="instagram" placeholder="instagram">
+        <span asp-validation-for="instagram" class="text-danger"></span>
+      </div>
+      <div class="mb-3 col-md-2">
+        <label asp-for="facebook" class="form-label">facebook</label>
+        <input class="form-control" asp-for="facebook" placeholder="facebook">
+         <span asp-validation-for="facebook" class="text-danger"></span>
+      </div>
+      <div class="mb-3 col-md-2">
+        <label asp-for="twitter" class="form-label">twitter</label>
+        <input  class="form-control" asp-for="twitter" placeholder="twitter">
+        <span asp-validation-for="twitter" class="text-danger"></span>
+      </div>
+      <div class="mb-3 col-md-2">
+        <label asp-for="linkedin" class="form-label">linkedin</label>
+        <input class="form-control" asp-for="linkedin" placeholder="linkedin">
+         <span asp-validation-for="linkedin" class="text-danger"></span>
+      </div>
+
+  </div class="row align-items-center">
+
+      <div class="row align-items-center">
+          <div class="mb-3 col-md-4">
+          <label asp-for="Description" class="form-label">Description</label>
+          <textarea style="width:500px; height:100px" class="form-control"  asp-for="Description" placeholder="Description"></textarea>
+          <span asp-validation-for="Description" class="text-danger"></span>
+      </div>
+
+      </div>
+
+      <div style="margin-bottom:20px">
+          <label asp-for="ImageFile" class="form-label">ImageFile</label>
+          <input type="file" class="form-control" asp-for="ImageFile" placeholder="ImageFile">
+      </div>
+
+
+
+      <div style="display:flex; justify-content:center; align-content:center ">
+           <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+</form>
+</div>
+

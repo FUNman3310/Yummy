@@ -1,0 +1,44 @@
+﻿@model List<Cheef>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<div class="container-fluid" style="display:flex; justify-content:space-between; align-items:center">
+    <h1>Cheefs:</h1>
+    <a asp-action="create" asp-controller="cheef" class="btn btn-success">Create</a>
+</div> 
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">FullName</th>
+      <th scope="col">Job</th>
+      <th scope="col">Image</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+
+        @foreach (Cheef cheef in Model)
+        {
+            count++;
+                    <tr>
+                      <th scope="row">@count</th>
+                      <td>@cheef.FullName</td>
+                        <td>@cheef.Job</td>
+                        <td>@cheef.Image</td>
+                      <td>
+                                  <img style="width:150px" src="~/Uploads/Products/@cheef.Image">
+
+                      </td>
+                      <td>
+                              <a asp-action="update" asp-controller="cheef" asp-route-id="@cheef.Id" class="btn btn-info">Update</a>
+                                      <a asp-action="delete" asp-controller="cheef" asp-route-id="@cheef.Id" class="btn btn-danger">Delete</a>
+                      </td>
+                    </tr>
+        }
+
+  </tbody>
+</table> 
